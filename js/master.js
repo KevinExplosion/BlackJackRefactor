@@ -1,6 +1,7 @@
-function Player(name, score) {
+function Player(name, score, chips) {
   this.name = name;
   this.score = score;
+  this.chips = chips;
 }
 
 Player.prototype.totalScore = function() {
