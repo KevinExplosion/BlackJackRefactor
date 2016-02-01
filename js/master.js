@@ -6,7 +6,7 @@ function Player(name, score, chips) {
 
 // Player.prototype.curCard = function() {
   
-    
+  
 
 // }
 
