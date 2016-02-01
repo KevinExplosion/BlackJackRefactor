@@ -50,3 +50,7 @@ li {
 .btn:hover{
   opacity: .99;
 }
+
+.game{
+  display: none;
+}

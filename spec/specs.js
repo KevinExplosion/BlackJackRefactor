@@ -5,12 +5,14 @@ describe('Player', function() {
     expect(testPlayer.score).to.equal(0);
     expect(testPlayer.chips).to.equal(500);
   });
-  it("concatenates player's randomly generated numbers for a total score", function() {
-    var testPlayer = new Player("Test Pilot", 21, 500);
-    expect(testPlayer.totalScore()).to.be.a('number');
-  });
-  it("takes away chips bet from bank", function() {
-    var testPlayer = new Player("Test Pilot", 21, 300);
-    expect(testPlayer.totalScore()).to.equal(200);
-  });
+  // it("concatenates player's randomly generated numbers for a total score", function() {
+  //   var testPlayer = new Player("Test Pilot", 21, 500);
+  //   expect(testPlayer.totalScore()).to.be.a('number');
+  // });
+  
+  
+  // it("takes away chips bet from bank", function() {
+  //   var testPlayer = new Player("Test Pilot", 21, 300);
+  //   expect(testPlayer.totalScore()).to.equal(200);
+  // });
 });
