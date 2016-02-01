@@ -1,0 +1,31 @@
+body {
+  font-family: Helvetica;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+}
+
+.doNotLie {
+  font-size: 10px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+}
