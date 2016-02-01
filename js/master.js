@@ -10,3 +10,9 @@ Player.prototype.totalScore = function() {
   }
   return this.score;
 }
+
+$(document).ready(function() {
+  $("#start").click(function(event) {
+    event.prevent(default);
+  });
+});
