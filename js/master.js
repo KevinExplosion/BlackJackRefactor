@@ -18,9 +18,9 @@ function randomCardSet(){
   } else if(randomSet === 2){
     return "Spades";
   } else if(randomSet === 3){
-    return "Diamonds"
+    return "Diamonds";
   } else {
-    return "Clubs"
+    return "Clubs";
   }
 }
 
