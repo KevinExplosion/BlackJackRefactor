@@ -5,8 +5,8 @@ function Player(name, score, chips) {
 }
 
 // Player.prototype.curCard = function() {
-  
-    
+
+
 
 // }
 
@@ -14,30 +14,13 @@ function randomCard() {
   return Math.round(Math.random() * (11 - 2) + 2);
 }
 
-<<<<<<< HEAD
-$(document).ready(function() {
-  $("#start").click(function(event) {
-    event.prevent(default);
-  });
-});
-=======
+
 $(document).ready(function(){
   $("#start").click(function(){
     $(".introduction").hide();
     $(".game").show("slide");
     var playerOne = $("#player1name").val();
     var newPlayer = new Player(playerOne, 0, 500);
-    
+
   });
 });
-
-
-
-
-
-
-
-
-
-
->>>>>>> td-ac
