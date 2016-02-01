@@ -5,17 +5,18 @@ body {
 
 .jumbotron {
   background-image: url("../img/header.png");
+  background-size: auto, 350px;
   background-repeat: no-repeat;
   width: 100%;
   background-position: -193px;
   min-height: 345px;
-
+  border-bottom: 1px solid black;
 }
 
 .introduction {
   font-weight: bolder;
   color: #fff;
-  opacity: .8;
+  /*opacity: .8;*/
 }
 
 .container {
@@ -32,7 +33,7 @@ h3 {
 }
 
 h4{
-  font-size: 25px
+  font-size: 25px;
 }
 ul {
   padding: 0px;
@@ -53,4 +54,19 @@ li {
 
 .game{
   display: none;
+}
+
+.player1 {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.player2 {
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+/* --- Modal CSS --- */
+#blackJackRules {
+  color: #000;
 }
