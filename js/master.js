@@ -1,6 +1,12 @@
 function twoToEleven(min, max) {
-  return Math.round(Math.random() * (11 - 2) + 2);
- };
+  var totalScore = 0
+debugger;
+  while (totalScore < 21){
+    totalScore += Math.round(Math.random() * (11 - 2) + 2);
+  }
+
+  return totalScore;
+}
 
 function Player(name, score) {
   this.name = name;
