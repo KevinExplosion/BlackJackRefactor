@@ -4,9 +4,10 @@ body {
 }
 
 .jumbotron {
-  text-align: center;
   background-image: url("../img/header.png");
-  background-position: -193px -35px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: -193px;
   min-height: 345px;
 
 }
