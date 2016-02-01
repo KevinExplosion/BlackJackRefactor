@@ -9,17 +9,42 @@
     <script src="js/master.js" charset="utf-8"></script>
   </head>
   <body>
+    <div class="jumbotron">
+    </div>
     <div class="container main">
-      <div class="jumbotron">
-      </div>
         <div class="introduction">
           <h3>Welcome to Black Jack Casino; the only game in our Casino</h3>
           <h4>In order to play we will need some information:</h4>
           <ul>
-            <li>First &amp; Last Name</li>
-            <li>Ages<span class="doNotLie">(Please don't lie)</span></li>
+            <div class="form-group">
+              <label for="player1name"><li>First &amp; Last Name</li></label>
+                <input type="text" class="form-control" id="player1name" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="player1age"><li>Age</li></label>
+                <input type="text" class="form-control" id="player1age" placeholder="Enter Age">
+              </div>
+            <!--<li>Age<span class="doNotLie">(Please don't lie)</span></li><br>-->
+            <!--<div class="form-group">-->
+            <!--  <label for="player2name"><li>First &amp; Last Name</li></label>-->
+            <!--    <input type="text" class="form-control" id="player2name" placeholder="Enter Name">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--    <label for="player2age"><li>Age</li></label>-->
+            <!--    <input type="text" class="form-control" id="player2age" placeholder="Enter Age">-->
+            <!--  </div>-->
+            <!--<li>Age<span class="doNotLie">(Please don't lie)</span></li>-->
           </ul><br>
-          <button type="button" class="btn btn-success btn-lg">Start Game</button>
+          
+          <button id="start" type="button" class="btn btn-danger btn-lg">Start Game</button>
+        </div>
+        <div class="game">
+          <h3>Your game name is:</h3>
+          <h3>You have 500 chips remaining</h3>
+          
+          
+          <span class="playerInfo"></span>
+          <span class="currentScore"></span>
         </div>
     </div>
   </body>

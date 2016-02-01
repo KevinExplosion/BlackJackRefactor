@@ -1,12 +1,35 @@
-function Player(name, score) {
+function Player(name, score, chips) {
   this.name = name;
   this.score = score;
+  this.chips = chips;
 }
 
-Player.prototype.totalScore = function() {
-  var playerScore = 0
-  while (playerScore < 21){
-    this.score = playerScore += Math.round(Math.random() * (11 - 2) + 2);
-  }
-  return this.score;
+// Player.prototype.curCard = function() {
+  
+    
+
+// }
+
+function randomCard() {
+  return Math.round(Math.random() * (11 - 2) + 2);
 }
+
+$(document).ready(function(){
+  $("#start").click(function(){
+    $(".introduction").hide();
+    $(".game").show("slide");
+    var playerOne = $("#player1name").val();
+    var newPlayer = new Player(playerOne, 0, 500);
+    
+  });
+});
+
+
+
+
+
+
+
+
+
+

@@ -1,13 +1,21 @@
 body {
   font-family: Helvetica;
+  background-color: #075220;
 }
 
 .jumbotron {
-  text-align: center;
   background-image: url("../img/header.png");
-  background-position: -215px -35px;
-  min-height: 225px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: -193px;
+  min-height: 345px;
 
+}
+
+.introduction {
+  font-weight: bolder;
+  color: #fff;
+  opacity: .8;
 }
 
 .container {
@@ -15,21 +23,34 @@ body {
 }
 
 .doNotLie {
-  font-size: 10px;
+  font-size: 15px;
 }
 
-h2 {
-  font-size: 45px;
-}
 
 h3 {
-  font-size: 25px;
+  font-size: 35px;
 }
 
+h4{
+  font-size: 25px
+}
 ul {
   padding: 0px;
 }
 
 li {
+  font-size: 20px;
   list-style-type: none;
+}
+
+.btn {
+  background-color: #FB3D37;
+}
+
+.btn:hover{
+  opacity: .99;
+}
+
+.game{
+  display: none;
 }
