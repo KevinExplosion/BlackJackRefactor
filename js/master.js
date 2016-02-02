@@ -7,6 +7,16 @@ function Player(name, score, chips) {
 // Player.prototype.curCard = function() {
 
 // }
+function jqkCard(){
+  var jqk = Math.round(Math.random()*(3-1)+ 1);
+  if(jqk == 1){
+    return "Jack";
+  } else if(jqk == 2){
+    return "Queen";
+  } else {
+    return "King";
+  }
+}
 
 function randomCardSet(){
   var randomSet = Math.round(Math.random() * (4 - 1) + 1);
@@ -67,15 +77,36 @@ $(document).ready(function(){
     var totalHand = p1HandOne + p1HandTwo;
     $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
     $("#totalHand").text(totalHand);
+  
     $("#randomCardBtn").click(function(){
+
       var cardHit = randomCard();
+      
+      if (totalHand < 21  && cardHit === 11){
+        if ((cardHit + totalHand) > 21){
+          cardHit = 1;
+          totalHand = totalHand + cardHit;
+      $("#curHand").append(" " + cardHit + randomCardSet());      
+      $("#totalHand").text(totalHand);
+        }
+      } else if (totalHand < 21){
       totalHand = totalHand + cardHit;
-      if(totalHand < 21){
-      $("#curHand").append(" " + cardHit + randomCardSet());
-        $("#totalHand").text(totalHand);
-      }else{
+      $("#curHand").append(" " + cardHit + randomCardSet());      
+      $("#totalHand").text(totalHand);
+        
+      } else {
         alert("you went above 21 you lose");
       }
+              console.log(totalHand);
+      if ("#totalHand" === 21){ 
+        alert("You win the round");
+      } else if(totalHand > 21){
+        alert("you lose");
+      } 
+ 
+      // totalHand = totalHand + cardHit
+      // $("#curHand").append(" " + cardHit + randomCardSet());      
+      // $("#totalHand").text(totalHand);
     });
   });
 });
