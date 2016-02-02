@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: Helvetica;
-  background-color: #00542D;
+  background-color: #075220;
 }
 
 .jumbotron {
@@ -35,13 +35,14 @@ body {
   background-image: url("../img/chips.png");
   background-repeat: no-repeat;
   background-position: right;
+
   height: 585px;
 }
 
 #start {
-  margin-top: -650px;
+  margin-bottom: 100px;
 }
-.player1 {
+.player1, .player2 {
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
@@ -50,6 +51,7 @@ body {
 .introduction {
   font-weight: bolder;
   color: #fff;
+  /*opacity: .8;*/
 }
 
 .gameTitle {
@@ -73,10 +75,9 @@ h3 {
   font-size: 35px;
 }
 
-h4 {
+h4{
   font-size: 25px;
 }
-
 ul {
   padding: 0px;
 }
@@ -100,12 +101,83 @@ li {
 }
 
 .player1 {
-  width: 40%;
-  margin-left: 30%;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+.player2 {
+  border: 2px solid blue;
+  border-radius: 5px;
 }
 
 /* --- Modal CSS --- */
 #blackJackRules {
   color: #000;
-  text-align: center;
 }
+
+
+/* --- card divs --- */
+html, .col-sm-10 {
+  background-color: grey;
+}
+
+.card {
+  border-radius: 8px;
+  height: 150px;
+  border: 1px solid black;
+  width: 99px;
+  background-size: 20px 20px, 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 1px 7px, 77px 118px;
+}
+
+.card h1 {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  line-height: -50px;
+}
+
+.card h5 {
+  font-weight: bold;
+}
+
+.centerCardNumber {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.leftCardNumber {
+  padding-left: 4px;
+}
+
+.rightCardNumber {
+  float: right;
+  padding-right: 2px;
+}
+
+.diamond, .heart {
+  background-color: #fff;
+  color: #CF000F;
+}
+
+.spade, .club {
+  background-color: #fff;
+}
+
+.club{
+  background-image: url(../img/club.png), url("../img/clubInverse.png");
+}
+
+.diamond{
+  background-image: url(../img/diamond.png), url("../img/diamond.png");
+}
+
+.heart{
+  background-image: url(../img/heart.png), url("../img/heartInverse.png");
+}
+
+.spade{
+  background-image: url(../img/spade.png), url("../img/spadeInverse.png");
+}
+
