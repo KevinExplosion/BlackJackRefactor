@@ -66,7 +66,7 @@ $(document).ready(function(){
     $("#playerNameSpan").text(newPlayer.name);
     $("#remainingChipsSpan").text(newPlayer.chips);
     $("#randomCardBtn").click(function(){
-      $("#randomCard").text(randomCard());
+    $("#randomCard").text(randomCard());
     });
   });
 });
