@@ -2,126 +2,89 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Black Jack Casino</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <script src="js/jquery-2.2.0.min.js" charset="utf-8"></script>
-    <script src="js/bootstrap.min.js" charset="utf-8"></script>
-    <script src="js/master.js" charset="utf-8"></script>
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/master.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <script charset="utf-8" src="js/jquery-2.2.0.min.js">
+    </script>
+    <script charset="utf-8" src="js/bootstrap.min.js">
+    </script>
+    <script charset="utf-8" src="js/master.js">
+    </script>
   </head>
   <body>
     <div class="jumbotron">
       <div class="jumbotronH1">
-        <h1><span class="firstLetter">B</span>LACK<span class="firstLetter">J</span>ACK</h1>
+        <h1><span class="firstLetter">B</span>LACK<span class=
+        "firstLetter">J</span>ACK</h1>
       </div>
     </div>
     <div class="introduction">
       <div class="gameTitle navbar">
         <h3>Welcome to Black Jack Casino: The only game in our Casino</h3>
-        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#blackJackRules">
-        Rules
-        </button>
       </div>
-        <!-- Modal -->
-          <div class="modal fade" id="blackJackRules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Black Jack Rules</h4>
-                </div>
-                <div class="modal-body">
-                  <p>The aim of the game is to accumulate a higher point total than the dealer, but without going over 21. You compute your score by adding the values of your individual cards.</p><br>
-                  <p>The cards 2 through 10 have their face value, Jack, Queen, and King are worth 10 points each.</p><br>
-                  <p>The Ace is worth either 1 or 11 points and is automatically selected based on user's current score. In otherwords, 11 will be chosen for scores up to 10 and after that will be 1 in order to prevent the user from losing the game.</p><br>
-                  <p>Good luck!</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+      <div class="container main">
+        <button class="btn btn-sm" data-target="#blackJackRules" data-toggle=
+        "modal" type="button">Rules</button> <!-- Modal -->
+        <div aria-labelledby="myModalLabel" class="modal fade" id=
+        "blackJackRules" role="dialog" tabindex="-1">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button aria-label="Close" class="close" data-dismiss="modal"
+                type="button"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Black Jack Rules</h4>
+              </div>
+              <div class="modal-body">
+                <p>The aim of the game is to accumulate a higher point total than
+                the dealer, but without going over 21. You compute your score by
+                adding the values of your individual cards.</p><br>
+                <p>The cards 2 through 10 have their face value, Jack, Queen, and
+                King are worth 10 points each.</p><br>
+                <p>The Ace is worth either 1 or 11 points and is automatically 
+                selected depending on player's current score. In otherwords, if 
+                your score is under 11 points, Ace will equal 11 to prevent user 
+                from losing, otherwise it will be 1.</p><br>
+                <p>Good luck!</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" type=
+                "button">Close</button>
               </div>
             </div>
           </div>
-      <!--<------End Modal------>
-     <div class="container main">
-      <div class="playerInfoBody"><hr>
-        <h4>In order to play we will need some information:</h4><br>
+        </div>
+        <div class="playerInfoBody">
+          <h4>In order to play we will need some information:</h4>
           <div class="player1">
-              <div class="form-group">
-                <label for="player1name">
-                  <li>First &amp; Last Name</li></label>
-                <input type="text" class="form-control" id="player1name" placeholder="Enter Name">
-              </div>
-              <div class="form-group">
-                <label for="player1age">
-                  <li>Age <span class="doNotLie">(Please don't lie)</span></li></label>
-                <input type="text" class="form-control" id="player1age" placeholder="Enter Age">
-              </div><br>
-            
+            <div class="form-group">
+              <label for="player1name">First &amp; Last Name</label>
+              <input class="form-control" id="player1name" placeholder="Enter Name" type="text">
+            </div>
+            <div class="form-group">
+              <label for="player1age">Age <span class="doNotLie">(Please don't lie)</span></label>
+              <input class="form-control" id="player1age" placeholder="Enter Age" type="text">
+            </div>
+            <button class="btn btn-danger btn-lg" id="start" type="button">Start
+            Game</button>
           </div>
         </div>
-        <br><br>
-        <button id="start" type="button" class="btn btn-danger btn-lg">Start Game</button>
       </div>
     </div>
-  <!----------------Game----------------->
+    
+    <!-------------Game-------------->
+    
+    
     <div class="game">
-
-      <h3>Your game name is:</h3>
-      <h3>You have 500 chips remaining</h3>
-
-      <h3>Your game name is: <span id="playerNameSpan"></span> </h3>
-      <h3>You have this many chips remaining: <span id="remainingChipsSpan"></span> </h3>
-
-      <span class="playerInfo"></span>
+      <h3>Your game name is: <span id="playerNameSpan"></span></h3>
+      <h3>You have this many chips remaining: <span id=
+      "remainingChipsSpan"></span></h3><span class="playerInfo"></span>
       <span class="currentScore"></span>
-      <p>You picked up a: <span id="randomCard"></span></p>
-      <button id="randomCardBtn" type="button" class="btn btn-danger btn-lg">Deal hand</button>
+      <p>Current Hand: <span id="curHand"></span></p>
+      <p><span id="totalHand"></span></p><br>
+      <button class="btn btn-danger btn-lg" id="randomCardBtn" type="button">Deal hand</button>
+      <button class="btn btn-primary btn-lg" id="randomCardBtn" type="button">Hold</button>
     </div>
   </body>
 </html>
-
-
-
-<div class="cardFace">
-  <div class="row">
-    <div class="col-sm-10">
-      <div class="col-sm-2 diamond card">
-        <h5 class="leftCardNumber cardNumber">#</h5>
-        <h1 class="centerCardNumber cardNumber">#</h1>
-        <h5 class="rightCardNumber cardNumber">#</h5>
-      </div>
-
-      <div class="col-sm-1">
-      </div>
-
-      <div class="col-sm-2 heart card">
-        <h5 class="leftCardNumber cardNumber">#</h5>
-        <h1 class="centerCardNumber cardNumber">#</h1>
-        <h5 class="rightCardNumber cardNumber">#</h5>
-      </div>
-
-      <div class="col-sm-1">
-      </div>
-
-      <div class="col-sm-2 spade card">
-        <h5 class="leftCardNumber cardNumber">#</h5>
-        <h1 class="centerCardNumber cardNumber">#</h1>
-        <h5 class="rightCardNumber cardNumber">#</h5>
-      </div>
-
-      <div class="col-sm-1">
-      </div>
-
-      <div class="col-sm-2 club card">
-        <h5 class="leftCardNumber cardNumber">#</h5>
-        <h1 class="centerCardNumber cardNumber">#</h1>
-        <h5 class="rightCardNumber cardNumber">#</h5>
-      </div>
-
-      <div class="col-sm-1">
-      </div>
-    </div>
-  </div>
-</div>
