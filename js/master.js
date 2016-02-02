@@ -77,9 +77,11 @@ $(document).ready(function(){
     var totalHand = p1HandOne + p1HandTwo;
     $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
     $("#totalHand").text(totalHand);
-  
+    
+    console.log(totalHand);
+ 
+ 
     $("#randomCardBtn").click(function(){
-
       var cardHit = randomCard();
       
       if (totalHand < 21  && cardHit === 11){
@@ -97,13 +99,12 @@ $(document).ready(function(){
       } else {
         alert("you went above 21 you lose");
       }
-              console.log(totalHand);
+            console.log(totalHand);
       if ("#totalHand" === 21){ 
         alert("You win the round");
-      } else if(totalHand > 21){
+      } else if ("#totalHand" > 21){
         alert("you lose");
       } 
- 
       // totalHand = totalHand + cardHit
       // $("#curHand").append(" " + cardHit + randomCardSet());      
       // $("#totalHand").text(totalHand);

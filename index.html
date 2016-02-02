@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Black Jack Casino</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -10,26 +10,20 @@
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="js/master.js" charset="utf-8"></script>
   </head>
-
-
   <body>
     <div class="jumbotron">
       <div class="jumbotronH1">
         <h1><span class="firstLetter">B</span>LACK<span class="firstLetter">J</span>ACK</h1>
       </div>
     </div>
-
-      <div class="introduction">
-        <div class="gameTitle navbar">
-          <h3>Welcome to Black Jack Casino: The only game in our Casino</h3>
-        </div>
-
-            <div class="container main">
-
-              <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#blackJackRules">
-                Rules
-              </button>
-          <!-- Modal -->
+    <div class="introduction">
+      <div class="gameTitle navbar">
+        <h3>Welcome to Black Jack Casino: The only game in our Casino</h3>
+        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#blackJackRules">
+        Rules
+        </button>
+      </div>
+        <!-- Modal -->
           <div class="modal fade" id="blackJackRules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -38,21 +32,10 @@
                   <h4 class="modal-title" id="myModalLabel">Black Jack Rules</h4>
                 </div>
                 <div class="modal-body">
-                  <p>
-                    The aim of the game is to accumulate a higher point total than the dealer, but without going over 21. You compute your score by adding the values of your individual cards.
-                  </p>
-                    <br>
-                  <p>
-                    The cards 2 through 10 have their face value, Jack, Queen, and King are worth 10 points each.
-                  </p>
-                    <br>
-                  <p>
-                    The Ace is worth either 1 or 11 points (player's choice).
-                  </p>
-                  <br>
-                  <p>
-                    Good luck!
-                  </p>
+                  <p>The aim of the game is to accumulate a higher point total than the dealer, but without going over 21. You compute your score by adding the values of your individual cards.</p><br>
+                  <p>The cards 2 through 10 have their face value, Jack, Queen, and King are worth 10 points each.</p><br>
+                  <p>The Ace is worth either 1 or 11 points and is automatically selected based on user's current score. In otherwords, 11 will be chosen for scores up to 10 and after that will be 1 in order to prevent the user from losing the game.</p><br>
+                  <p>Good luck!</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -60,77 +43,85 @@
               </div>
             </div>
           </div>
-
-        <div class="playerInfoBody">
-          <h4>In order to play we will need some information:</h4>
-          <br>
-            <div class="row">
-              <div class="col-md-4">
+      <!--<------End Modal------>
+     <div class="container main">
+      <div class="playerInfoBody"><hr>
+        <h4>In order to play we will need some information:</h4><br>
+          <div class="player1">
+              <div class="form-group">
+                <label for="player1name">
+                  <li>First &amp; Last Name</li></label>
+                <input type="text" class="form-control" id="player1name" placeholder="Enter Name">
               </div>
-              <div class="col-md-4">
-              <div class="player1">
-                <ul>
-                  <div class="form-group">
-                    <label for="player1name">
-                      <li>First &amp; Last Name</li></label>
-                        <input type="text" class="form-control" id="player1name" placeholder="Enter Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="player1age"><li>Age</li></label>
-                      <input type="text" class="form-control" id="player1age" placeholder="Enter Age">
-                  </div>
-
-                  <li>Age<span class="doNotLie">(Please don't lie)</span></li>
-                  <br>
-              </div>
-
-              <br>
-              <br>
-
-              <!-- <button id="start" type="button" class="btn btn-danger btn-lg">Start Game</button> -->
-
-
-              <!-- <div class="player2">
-                <div class="form-group">
-                  <label for="player2name">
-                    <li>First &amp; Last Name</li>
-                  </label>
-                    <input type="text" class="form-control" id="player2name" placeholder="Enter Name">
-                </div>
-                <div class="form-group">
-                  <label for="player2age">
-                    <li>Age</li>
-                  </label>
-                    <input type="text" class="form-control" id="player2age" placeholder="Enter Age">
-                </div>
-                <li>Age<span class="doNotLie">(Please don't lie)</span></li>
-            </ul><br>
-          </div> -->
+              <div class="form-group">
+                <label for="player1age">
+                  <li>Age <span class="doNotLie">(Please don't lie)</span></li></label>
+                <input type="text" class="form-control" id="player1age" placeholder="Enter Age">
+              </div><br>
+            
+          </div>
         </div>
+        <br><br>
+        <button id="start" type="button" class="btn btn-danger btn-lg">Start Game</button>
       </div>
     </div>
-    <br><br>
-          <button id="start" type="button" class="btn btn-danger btn-lg">Start Game</button>
+  <!----------------Game----------------->
+    <div class="game">
 
-        </div>
-      </div>
-        <div class="game">
+      <h3>Your game name is:</h3>
+      <h3>You have 500 chips remaining</h3>
 
-          <h3>Your game name is:</h3>
-          <h3>You have 500 chips remaining</h3>
+      <h3>Your game name is: <span id="playerNameSpan"></span> </h3>
+      <h3>You have this many chips remaining: <span id="remainingChipsSpan"></span> </h3>
 
-
-
-          <h3>Your game name is: <span id="playerNameSpan"></span> </h3>
-          <h3>You have this many chips remaining: <span id="remainingChipsSpan"></span> </h3>
-
-          <span class="playerInfo"></span>
-          <span class="currentScore"></span>
-          <p>Current Hand: <span id="curHand"></span></p>
-          <p><span id="totalHand"></span></p>
-          <p>You picked up a: <span id="randomCard"></span></p>
-          <button id="randomCardBtn" type="button" class="btn btn-danger btn-lg">Deal hand</button>
-        </div>
-    <!-- </div> -->
+      <span class="playerInfo"></span>
+      <span class="currentScore"></span>
+      <p>You picked up a: <span id="randomCard"></span></p>
+      <button id="randomCardBtn" type="button" class="btn btn-danger btn-lg">Deal hand</button>
+    </div>
   </body>
 </html>
+
+
+
+<div class="cardFace">
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="col-sm-2 diamond card">
+        <h5 class="leftCardNumber cardNumber">#</h5>
+        <h1 class="centerCardNumber cardNumber">#</h1>
+        <h5 class="rightCardNumber cardNumber">#</h5>
+      </div>
+
+      <div class="col-sm-1">
+      </div>
+
+      <div class="col-sm-2 heart card">
+        <h5 class="leftCardNumber cardNumber">#</h5>
+        <h1 class="centerCardNumber cardNumber">#</h1>
+        <h5 class="rightCardNumber cardNumber">#</h5>
+      </div>
+
+      <div class="col-sm-1">
+      </div>
+
+      <div class="col-sm-2 spade card">
+        <h5 class="leftCardNumber cardNumber">#</h5>
+        <h1 class="centerCardNumber cardNumber">#</h1>
+        <h5 class="rightCardNumber cardNumber">#</h5>
+      </div>
+
+      <div class="col-sm-1">
+      </div>
+
+      <div class="col-sm-2 club card">
+        <h5 class="leftCardNumber cardNumber">#</h5>
+        <h1 class="centerCardNumber cardNumber">#</h1>
+        <h5 class="rightCardNumber cardNumber">#</h5>
+      </div>
+
+      <div class="col-sm-1">
+      </div>
+    </div>
+  </div>
+</div>
