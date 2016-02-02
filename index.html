@@ -19,17 +19,16 @@
       </div>
     </div>
 
-    <div class="container main">
       <div class="introduction">
-        <div class="gameTitle">
-          <h3>Welcome to Black Jack Casino; the only game in our Casino</h3>
+        <div class="gameTitle navbar">
+          <h3>Welcome to Black Jack Casino: The only game in our Casino</h3>
         </div>
 
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#blackJackRules">
-            Rules
-          </button>
+            <div class="container main">
 
+              <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#blackJackRules">
+                Rules
+              </button>
           <!-- Modal -->
           <div class="modal fade" id="blackJackRules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -84,7 +83,12 @@
                   <li>Age<span class="doNotLie">(Please don't lie)</span></li>
                   <br>
               </div>
+
               <br>
+              <br>
+
+              <!-- <button id="start" type="button" class="btn btn-danger btn-lg">Start Game</button> -->
+
 
               <!-- <div class="player2">
                 <div class="form-group">
@@ -105,12 +109,11 @@
         </div>
       </div>
     </div>
-
-      <br>
-
+    <br><br>
           <button id="start" type="button" class="btn btn-danger btn-lg">Start Game</button>
 
         </div>
+      </div>
         <div class="game">
 
           <h3>Your game name is:</h3>
@@ -128,6 +131,6 @@
           <p>You picked up a: <span id="randomCard"></span></p>
           <button id="randomCardBtn" type="button" class="btn btn-danger btn-lg">Deal hand</button>
         </div>
-    </div>
+    <!-- </div> -->
   </body>
 </html>
