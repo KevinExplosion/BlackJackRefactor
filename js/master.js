@@ -16,9 +16,9 @@ function randomCardSet(){
   } else if(randomSet === 2){
     return " of Spades";
   } else if(randomSet === 3){
-    return " of Diamonds"
+    return " of Diamonds";
   } else {
-    return " of Clubs"
+    return " of Clubs";
   }
 }
 
@@ -47,7 +47,9 @@ function randomCard() {
   }
 }
 
-
+function startCard() {
+  
+}
 
 /*=====================JQUERY====================*/
 
@@ -58,13 +60,11 @@ $(document).ready(function(){
     $(".game").show("slide");
     var playerOne = $("#player1name").val();
     var newPlayer = new Player(playerOne, 0, 500);
-
-
-
     $("#playerNameSpan").text(newPlayer.name);
     $("#remainingChipsSpan").text(newPlayer.chips);
+    $("#randomCard").text(randomCard() + randomCard());
     $("#randomCardBtn").click(function(){
-      $("#randomCard").text(randomCard());
+      $("#randomCard").append(randomCard());
     });
   });
 });

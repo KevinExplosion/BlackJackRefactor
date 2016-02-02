@@ -10,12 +10,20 @@
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="js/master.js" charset="utf-8"></script>
   </head>
+
+
   <body>
     <div class="jumbotron">
+      <div class="jumbotronH1">
+        <h1><span class="firstLetter">B</span>LACK<span class="firstLetter">J</span>ACK</h1>
+      </div>
     </div>
+
     <div class="container main">
-        <div class="introduction">
+      <div class="introduction">
+        <div class="gameTitle">
           <h3>Welcome to Black Jack Casino; the only game in our Casino</h3>
+        </div>
 
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#blackJackRules">
@@ -31,9 +39,21 @@
                   <h4 class="modal-title" id="myModalLabel">Black Jack Rules</h4>
                 </div>
                 <div class="modal-body">
-                  <p>The aim of the game is to accumulate a higher point total than the dealer, but without going over 21. You compute your score by adding the values of your individual cards.
-
-The cards 2 through 10 have their face value, J, Q, and K are worth 10 points each, and the Ace is worth either 1 or 11 points (player's choice).</p>
+                  <p>
+                    The aim of the game is to accumulate a higher point total than the dealer, but without going over 21. You compute your score by adding the values of your individual cards.
+                  </p>
+                    <br>
+                  <p>
+                    The cards 2 through 10 have their face value, Jack, Queen, and King are worth 10 points each.
+                  </p>
+                    <br>
+                  <p>
+                    The Ace is worth either 1 or 11 points (player's choice).
+                  </p>
+                  <br>
+                  <p>
+                    Good luck!
+                  </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -42,34 +62,49 @@ The cards 2 through 10 have their face value, J, Q, and K are worth 10 points ea
             </div>
           </div>
 
+        <div class="playerInfoBody">
           <h4>In order to play we will need some information:</h4>
           <br>
-          <div class="row">
-            <div class="col-md-4 player1">
-          <ul>
-            <div class="form-group">
-              <label for="player1name"><li>First &amp; Last Name</li></label>
-                <input type="text" class="form-control" id="player1name" placeholder="Enter Name">
-            </div>
-            <div class="form-group">
-                <label for="player1age"><li>Age</li></label>
-                <input type="text" class="form-control" id="player1age" placeholder="Enter Age">
+            <div class="row">
+              <div class="col-md-4">
               </div>
-            <li>Age<span class="doNotLie">(Please don't lie)</span></li><br>
-          </div>
-          <div class="col-md-4 player2">
-            <div class="form-group">
-              <label for="player2name"><li>First &amp; Last Name</li></label>
-                <input type="text" class="form-control" id="player2name" placeholder="Enter Name">
-            </div>
-            <div class="form-group">
-                <label for="player2age"><li>Age</li></label>
-                <input type="text" class="form-control" id="player2age" placeholder="Enter Age">
+              <div class="col-md-4">
+              <div class="player1">
+                <ul>
+                  <div class="form-group">
+                    <label for="player1name">
+                      <li>First &amp; Last Name</li></label>
+                        <input type="text" class="form-control" id="player1name" placeholder="Enter Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="player1age"><li>Age</li></label>
+                      <input type="text" class="form-control" id="player1age" placeholder="Enter Age">
+                  </div>
+
+                  <li>Age<span class="doNotLie">(Please don't lie)</span></li>
+                  <br>
               </div>
-            <li>Age<span class="doNotLie">(Please don't lie)</span></li>
-          </ul><br>
+              <br>
+
+              <!-- <div class="player2">
+                <div class="form-group">
+                  <label for="player2name">
+                    <li>First &amp; Last Name</li>
+                  </label>
+                    <input type="text" class="form-control" id="player2name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label for="player2age">
+                    <li>Age</li>
+                  </label>
+                    <input type="text" class="form-control" id="player2age" placeholder="Enter Age">
+                </div>
+                <li>Age<span class="doNotLie">(Please don't lie)</span></li>
+            </ul><br>
+          </div> -->
         </div>
       </div>
+    </div>
 
       <br>
 
