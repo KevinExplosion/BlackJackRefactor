@@ -25,25 +25,25 @@ function randomCardSet(){
 function randomCard() {
   var randomNum = Math.round(Math.random() * (11 - 2) + 2);
   if(randomNum === 2){
-    return 2 + randomCardSet();
+    return 2;
   } else if(randomNum === 3){
-    return 3 + randomCardSet();
+    return 3;
   } else if(randomNum === 4) {
-    return 4 + randomCardSet();
+    return 4;
   } else if(randomNum === 5) {
-    return 5 + randomCardSet();
+    return 5;
   } else if(randomNum === 6) {
-    return 6 + randomCardSet();
+    return 6;
   } else if(randomNum === 7) {
-    return 7 + randomCardSet();
+    return 7;
   } else if(randomNum === 8) {
-    return 8 + randomCardSet();
+    return 8;
   } else if(randomNum === 9) {
-    return 9 + randomCardSet();
+    return 9;
   } else if(randomNum === 10) {
-    return 10 + randomCardSet();
+    return 10;
   } else{
-    return 11 + randomCardSet();
+    return 11;
   }
 }
 
@@ -62,9 +62,20 @@ $(document).ready(function(){
     var newPlayer = new Player(playerOne, 0, 500);
     $("#playerNameSpan").text(newPlayer.name);
     $("#remainingChipsSpan").text(newPlayer.chips);
-    $("#randomCard").text(randomCard() + randomCard());
+    var p1HandOne = randomCard();
+    var p1HandTwo = randomCard();
+    var totalHand = p1HandOne + p1HandTwo;
+    $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
+    $("#totalHand").text(totalHand);
     $("#randomCardBtn").click(function(){
-      $("#randomCard").append(randomCard());
+      var cardHit = randomCard();
+      totalHand = totalHand + cardHit;
+      if(totalHand < 21){
+      $("#curHand").append(" " + cardHit + randomCardSet());
+        $("#totalHand").text(totalHand);
+      }else{
+        alert("you went above 21 you lose");
+      }
     });
   });
 });

@@ -97,3 +97,14 @@ li {
 #blackJackRules {
   color: #000;
 }
+
+
+#curHand{
+  font-size: 20px;
+  color: white;
+}
+
+#totalHand{
+  color: white;
+  font-size: 20px;
+}
