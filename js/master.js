@@ -62,7 +62,7 @@ function startCard() {
 
 
 $(document).ready(function(){
-  $("#start").click(function(){
+  $("#start, #startOver").click(function(){
     $(".introduction").hide();
     $(".game").show("slide");
     var playerOne = $("#player1name").val();
@@ -78,6 +78,11 @@ $(document).ready(function(){
     $("#dealerHand").text(dealerHand + randomCardSet());
     $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
     $("#totalHand").text(totalHand);
+    
+    if($("#startOver").is(":visible")) {
+      ("#startOver").hide();
+      ("#randomCardBtn, #holdBtn").show();
+    }
     
     $("#randomCardBtn").click(function(){
 
@@ -109,51 +114,19 @@ $(document).ready(function(){
     $("#holdBtn").click(function(){      
       $('#randomCardBtn, #holdBtn').hide();
       $('#startOver').show();
+      var dealerHit = randomCard();
 
       while(dealerTotal < totalHand){
-        dealerTotal = dealerTotal + randomCard();
-        $("#dealerHand").append(" " + randomCard() + randomCardSet());
+        dealerTotal = dealerTotal + dealerHit;
+        $("#dealerHand").append(" " + dealerHit + randomCardSet());
         $("#dealerFinal").text(dealerTotal);
       }
-      
+      // if((dealerTotal > totalHand) && (dealerTotal <= 21))  {
+      //   alert("You fucking lost");
+      // }          
     });
+
     
-    $("#startOver").click(function(event) {
-      
-      var totalHand = 0;
-      var cardHit = 0;
-      
-      totalHand = totalHand + 0;
-      cardHit = totalHand + 0;
-    
-    $("#curHand").empty(); 
-    $("#dealerHand").empty();
-    
-    $("#startOver").hide()
-     $('#randomCardBtn, #holdBtn').show();
-      
-    var playerOne = $("#player1name").val(); // good. You can stay
-    var newPlayer = new Player(playerOne, 0, 500);
-    var dealer = new Player(dealer, 0, 5000);
-    $("#playerNameSpan").text(newPlayer.name); // good. can stay
-    $("#remainingChipsSpan").text(newPlayer.chips); // not functional yet
-    var p1HandOne = randomCard();
-    var p1HandTwo = randomCard();
-    var totalHand = p1HandOne + p1HandTwo;
-    var dealerHand = randomCard();
-    var dealerTotal = dealerHand;
-    $("#dealerHand").text(dealerHand + randomCardSet());
-    $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
-    $("#totalHand").text(totalHand);
-      
-      
-      
-      
-      
-      
-      
-      
-      
       
       // var newPlayer = new Player(playerOne, 0, 500);
 
@@ -183,6 +156,6 @@ $(document).ready(function(){
       //   alert("You Lose...LOSER");
       // } 
       
-    });
+
   });
 });
