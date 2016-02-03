@@ -9,12 +9,10 @@ body {
 }
 
 .jumbotron {
-  background-image: url("../img/header.png");
-  background-size: auto, 350px;
+  background: url("../img/headerSmall.png");
+  background-size: 100%;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  width: 100%;
-  background-position: -193px;
-  min-height: 345px;
   border-bottom: 1px solid black;
 }
 
@@ -35,8 +33,7 @@ body {
 .playerInfoBody {
   background-image: url("../img/chips.png");
   background-repeat: no-repeat;
-  background-position: right;
-
+  background-position: center top;
   height: 585px;
 }
 
@@ -45,11 +42,12 @@ body {
 }
 
 .player1{
+  text-align: center;
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-left: 400px;
-  width:30%;
+  /*margin-left: 400px;*/
+  /*width:30%;*/
 }
 
 .introduction {
@@ -93,9 +91,24 @@ h4{
   opacity: .99;
 }
 
+/*.introduction {*/
+/*  background-image: url("../img/introductionBackground.jpg");*/
+/*  background-size: 100%;*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*}*/
+
 .game{
+  background: url("../img/gameBackground.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right center;
   display: none;
   text-align: center;
+  margin-top: -30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  color: #ECECEC;
 }
 
 #startOver {
@@ -103,13 +116,27 @@ h4{
   left: 50%;
 }
 
+#showDealer {
+  display: none;
+}
 
 /* --- Modal CSS --- */
 #blackJackRules {
   color: #000;
 }
 
-#totalHand, #dealerHand, #curHand, #dealerFinal{
+
+#curHand{
+  font-size: 20px;
+  color: white;
+}
+
+#totalHand{
   color: white;
   font-size: 20px;
+}
+
+#dealerHand{
+  font-size: 20px;
+  color: white;
 }

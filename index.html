@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Blackjack App</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/master.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -63,7 +63,15 @@
         "modal" type="button">Rules</button> 
         <div class="playerInfoBody">
           <h4>In order to play we will need some information:</h4>
+          
+          
           <div class="player1">
+
+      <div class="row">
+        <div class="col-sm-4">
+          </div>
+
+           <div class="col-sm-4">
             <div class="form-group">
               <label for="player1name">First &amp; Last Name</label>
               <input class="form-control" id="player1name" placeholder="Enter Name" type="text">
@@ -74,26 +82,31 @@
             </div>
             <button class="btn btn-danger btn-lg" id="start" type="button">Start
             Game</button>
-          </div>
+            </div>
+            <div class="col-sm-4">
+            </div>
+            </div>
+          </div><!--player1 body-->
         </div>
       </div>
-    </div>
+      </div>
     
     <!-------------Game-------------->
     
     
     <div class="game">
-      <h3>Your game name is: <span id="playerNameSpan"></span></h3>
+      <h3>Welcome,  <span id="playerNameSpan"></span></h3>
       <h3>You have this many chips remaining: <span id=
       "remainingChipsSpan"></span></h3><span class="playerInfo"></span>
       <span class="currentScore"></span>
+      <h4>Good Luck!</h4>
       <p>Dealer Hand: <span id="dealerHand"></span></p>
-      <p>Dealer score: <span id="dealerFinal"></span></p>
+      <p id="showDealer">Dealer score: <span id="dealerFinal"></span></p>
       <p>Current Hand: <span id="curHand"></span></p>
       <p>Your score: <span id="totalHand"></span></p><br>
       <button class="btn btn-danger btn-lg" id="randomCardBtn" type="button">Hit</button>
       <button class="btn btn-primary btn-lg" id="holdBtn" type="button">Hold</button>
-      <button class="btn btn-warning btn-lg" id="startOver" type="button">Play Again</button>
+      <button class="btn btn-warning btn-lg" id="startOver" type="button">Deal Again</button>
     </div>
   </body>
 </html>
