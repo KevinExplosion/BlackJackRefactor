@@ -105,58 +105,83 @@ $(document).ready(function(){
         alert("You Lose...LOSER");
       } 
     });
+    
     $("#holdBtn").click(function(){      
       $('#randomCardBtn, #holdBtn').hide();
       $('#startOver').show();
-      // var cpuTotalHand = cpuHandOne + cupHandTwo;
-      
-      console.log(totalHand);
-      console.log(dealerHand);
-      
-      $("#dealerHand").append(dealerHand);
-      
-      while(dealerTotal < totalHand){ debugger;
-        // dealerTotal = ($("#dealerHand").append(dealerTotal + randomCard()));
+
+      while(dealerTotal < totalHand){
         dealerTotal = dealerTotal + randomCard();
-        $("#dealerHand").append(dealerTotal + randomCardSet());
+        $("#dealerHand").append(" " + randomCard() + randomCardSet());
+        $("#dealerFinal").text(dealerTotal);
       }
       
-      
-      
-      // if (dealerHand < totalHand) {
-      //   dealerTotal + cardHit;
-      // }
     });
     
     $("#startOver").click(function(event) {
-      totalHand = 0;
-      totalHand = 0;
       
-      var newPlayer = new Player(playerOne, 0, 500);
+      var totalHand = 0;
+      var cardHit = 0;
+      
+      totalHand = totalHand + 0;
+      cardHit = totalHand + 0;
+    
+    $("#curHand").empty(); 
+    $("#dealerHand").empty();
+    
+    $("#startOver").hide()
+     $('#randomCardBtn, #holdBtn').show();
+      
+    var playerOne = $("#player1name").val(); // good. You can stay
+    var newPlayer = new Player(playerOne, 0, 500);
+    var dealer = new Player(dealer, 0, 5000);
+    $("#playerNameSpan").text(newPlayer.name); // good. can stay
+    $("#remainingChipsSpan").text(newPlayer.chips); // not functional yet
+    var p1HandOne = randomCard();
+    var p1HandTwo = randomCard();
+    var totalHand = p1HandOne + p1HandTwo;
+    var dealerHand = randomCard();
+    var dealerTotal = dealerHand;
+    $("#dealerHand").text(dealerHand + randomCardSet());
+    $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
+    $("#totalHand").text(totalHand);
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      // var newPlayer = new Player(playerOne, 0, 500);
 
-      var cardHit = randomCard();
+      // var cardHit = randomCard();
       
-      if (totalHand < 21  && cardHit === 11){
-        if ((cardHit + totalHand) > 21){
-          cardHit = 1;
-          totalHand = totalHand + cardHit;
-      $("#curHand").append(" " + cardHit + randomCardSet());      
-      $("#totalHand").text(totalHand);
-        }
-      } else if (totalHand < 21){
-      totalHand = totalHand + cardHit;
-      $("#curHand").append(" " + cardHit + randomCardSet());      
-      $("#totalHand").text(totalHand);
+      // if (totalHand < 21  && cardHit === 11){
+      //   if ((cardHit + totalHand) > 21){
+      //     cardHit = 1;
+      //     totalHand = totalHand + cardHit;
+      // $("#curHand").empty();    
+      // $("#curHand").append(" " + cardHit + randomCardSet());      
+      // $("#totalHand").text(totalHand);
+      //   }
+      // } else if (totalHand < 21){
+      // totalHand = totalHand + cardHit;
+      // $("#curHand").empty();    
+      // $("#curHand").append(" " + cardHit + randomCardSet());      
+      // $("#totalHand").text(totalHand);
         
-      } else {
-        alert("you went above 21 you lose");
-      }
-         console.log(totalHand);
-      if (totalHand === 21){ 
-        alert("You win the round");
-      } else if(totalHand > 21){
-        alert("You Lose...LOSER");
-      } 
+      // } else {
+      //   alert("you went above 21 you lose");
+      // }
+      //   console.log(totalHand);
+      // if (totalHand === 21){ 
+      //   alert("You win the round");
+      // } else if(totalHand > 21){
+      //   alert("You Lose...LOSER");
+      // } 
       
     });
   });

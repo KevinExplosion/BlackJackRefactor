@@ -109,18 +109,7 @@ h4{
   color: #000;
 }
 
-
-#curHand{
-  font-size: 20px;
-  color: white;
-}
-
-#totalHand{
+#totalHand, #dealerHand, #curHand, #dealerFinal{
   color: white;
   font-size: 20px;
-}
-
-#dealerHand{
-  font-size: 20px;
-  color: white;
 }
