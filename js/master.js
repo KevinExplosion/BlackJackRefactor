@@ -15,7 +15,7 @@ function jqkCard(){
   }
 }
 
-function randomCardSet(){
+function suitGenerator(){
   var randomSet = Math.round(Math.random() * (4 - 1) + 1);
 
   if(randomSet === 1){
@@ -27,6 +27,7 @@ function randomCardSet(){
   } else {
     return " of Clubs";
   }
+  randomSet = Math.round(Math.random() * (4 - 1) + 1);
 }
 
 function randomCard() {
@@ -54,19 +55,42 @@ function randomCard() {
   }
 }
 
-// function startCard() {
-  
-// }
+var handOne = randomCard();
+var handTwo = randomCard();
+var cardHit = randomCard();
+var totalHand = handOne + handTwo;
+
+function winLose() {
+  if (totalHand > 21){
+    alert("You lose");
+  } else if (totalHand == 21){
+    alert("You win");
+  }
+}
+
+dealerHit = randomCard();
+dealerTotal = dealerHit;
+
+
+function dealerWinLose(){
+  if(dealerTotal > totalHand && dealerTotal <= 21)  {
+    alert("You lost");
+  } else if (dealerTotal > 21) {
+    alert("You won");
+  }
+}
+
+function resetVars(){
+  handOne = randomCard();
+  handTwo = randomCard();
+  totalHand = handOne + handTwo;
+  dealerHit = randomCard();
+  cardHit = randomCard();
+}
 
 /*=====================JQUERY====================*/
 
-
-$(document).ready(function(){ 
-  var p1HandOne = randomCard();
-  var p1HandTwo = randomCard();
-  var totalHand = p1HandOne + p1HandTwo;
-  var dealerHand = randomCard();
-  var dealerTotal = dealerHand;
+$(document).ready(function(){
   $("#start").click(function(){
     $(".introduction").hide();
     $(".game").show();
@@ -75,73 +99,63 @@ $(document).ready(function(){
     var dealer = new Player(dealer, 0, 5000);
     $("#playerNameSpan").text(newPlayer.name);
     $("#remainingChipsSpan").text(newPlayer.chips);
-   
+    $("#dealerHand").text(dealerTotal + suitGenerator());
+    $("#curHand").text(handOne + suitGenerator() + " " + handTwo + suitGenerator());
+    $("#totalHand").text(totalHand);
+  });
 
-    $("#dealerHand").text(dealerHand + randomCardSet());
-    $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
+  $("#randomCardBtn").click(function(){
+
+    if (totalHand < 21 && cardHit === 11){
+      if ((cardHit + totalHand) > 21){
+        cardHit = 1;
+        $("#curHand").append(" " + cardHit + suitGenerator());
+        totalHand = totalHand + cardHit;
+        cardHit = randomCard();
+      } else {
+        cardHit = 11;
+        $("#curHand").append(" " + cardHit + suitGenerator());
+        totalHand = totalHand + cardHit;
+        cardHit = randomCard();
+      }
+      // totalHand = totalHand + cardHit;
+      // $("#curHand").append(" " + cardHit + suitGenerator());
+      // cardHit = randomCard();
+    } else if (totalHand < 21 && cardHit !== 1){
+      totalHand = totalHand + cardHit;
+      $("#curHand").append(" " + cardHit + suitGenerator());
+      cardHit = randomCard();
+    }
+
+    $("#totalHand").text(totalHand);
+        var final = winLose();
+  });
+
+  $("#holdBtn").click(function(){
+    dealerTotal = dealerHit;
+    $('#randomCardBtn, #holdBtn').hide();
+    $('#startOver').show();
+    $("#showDealer").show();
+
+    while (dealerTotal < totalHand){
+      $("#dealerHand").append(" " + dealerHit + suitGenerator());
+      dealerTotal = dealerTotal + dealerHit;
+      dealerHit = randomCard();
+    }
+
+    $("#dealerFinal").text(dealerTotal);
+    var winlose = dealerWinLose();
+
+  });
+  $("#startOver").click(function(){
+    var reset = resetVars();
+    $("#showDealer").hide();
+    $("#startOver").hide();
+    $("#randomCardBtn, #holdBtn").show();
+    $("#totalHand, #curHand, #dealerHand, #dealerFinal").empty();
+    $("#dealerHand").text(dealerHit + suitGenerator());
+    $("#curHand").text(handOne + suitGenerator() + " " + handTwo + suitGenerator());
     $("#totalHand").text(totalHand);
 
-    
-    $("#randomCardBtn").click(function(){
-
-      var cardHit = randomCard();
-      
-      if (totalHand < 21  && cardHit === 11){
-        if ((cardHit + totalHand) > 21){
-          cardHit = 1;
-          totalHand = totalHand + cardHit;
-      $("#curHand").append(" " + cardHit + randomCardSet());      
-      $("#totalHand").text(totalHand);
-        }
-      } else if (totalHand < 21){
-      totalHand = totalHand + cardHit;
-      $("#curHand").append(" " + cardHit + randomCardSet());      
-      $("#totalHand").text(totalHand);
-        
-      } else {
-        alert("you went above 21 you lose");
-      }
-      if (totalHand === 21){ 
-        alert("You win the round");
-        ($("#randomCardBtn, #holdBtn").hide());
-        ($("#startOver").show());
-      } else if(totalHand > 21){
-        alert("You Lose...LOSER");
-        ($("#randomCardBtn, #holdBtn").hide());
-        ($("#startOver").show());
-      } 
-    });
-    
-    $("#holdBtn").click(function(){      
-      $('#randomCardBtn, #holdBtn').hide();
-      $('#startOver').show();
-      $("#showDealer").show();
-      while(dealerTotal < totalHand){
-      var dealerHit = randomCard();        
-        dealerTotal = dealerTotal + dealerHit;
-        $("#dealerHand").append(" " + dealerHit + randomCardSet());
-        $("#dealerFinal").text(dealerTotal);
-      }
-      if(dealerTotal > totalHand && dealerTotal <= 21)  {
-        alert("You  lost");
-      } else if (dealerTotal > 21) {
-        alert("You won dude!");
-      } else {
-        alert("~YoU tIeD~");
-      }
-    });
-
-  $("#startOver").click(function(){
-  
-      $("#startOver").hide();
-      $("#randomCardBtn, #holdBtn").show();
-      $("#totalHand, #curHand").empty();
-    var p1HandOne = randomCard();
-    var p1HandTwo = randomCard();
-    var totalHand = p1HandOne + p1HandTwo;
-    $("#curHand").text(p1HandOne + randomCardSet() + " " + p1HandTwo + randomCardSet());
-     dealerHand = 0;
-     dealerTotal = 0;
-    });
   });
 });
