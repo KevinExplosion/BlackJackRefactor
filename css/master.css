@@ -4,7 +4,7 @@ html {
   background-size: 100%;
   background-image: url("../img/introductionBackground.jpg");
   background-repeat: no-repeat;
-  font-family: monospace, Helvetica, sans-serif;
+  font-family: 'Press Start 2P', monospace, Helvetica, sans-serif;
 }
 
 body {
@@ -13,11 +13,13 @@ body {
   margin-right: -100px;
 }
 
+footer {
+  font-family: 'Press Start 2P';
+}
+
 .jumbotron {
-  background: url("../img/headerSmall.png");
-  background-size: 100%;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  background: url("../img/headerSmall.jpg") repeat;
+  background-color: green;
   border-bottom: 1px solid black;
 }
 
@@ -26,13 +28,15 @@ body {
 }
 
 .jumbotronH1 h1{
+  font-family: 'Press Start 2P';
   font-weight: bold;
-  font-size: 120px;
+  font-size: 90px;
   text-align: right;
   padding-right: 50px;
   letter-spacing: 7px;
   color: #fff;
   text-shadow: 2px 2px 5px black;
+  text-decoration: underline;
 }
 
 .container {
@@ -54,7 +58,6 @@ body {
 #start:hover {
   opacity: 0.8;
 }
-
 /* ---- End start button ---- */
 
 .introduction {
