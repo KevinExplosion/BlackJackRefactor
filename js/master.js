@@ -60,6 +60,14 @@ var handTwo = randomCard();
 var cardHit = randomCard();
 var totalHand = handOne + handTwo;
 
+function aceGrab(){
+  if (handOne === 11 && totalHand > 21) {
+    handOne = 1;
+  } else if (handTwo === 11 && totalHand > 21){
+    handTwo = 1;
+  }
+}
+
 function winLose() {
   if (totalHand > 21){
     alert("You lose");
@@ -75,8 +83,12 @@ dealerTotal = dealerHit;
 function dealerWinLose(){
   if(dealerTotal > totalHand && dealerTotal <= 21)  {
     alert("You lost");
+  } else if (dealerTotal === 21){
+    alert("You lost");
   } else if (dealerTotal > 21) {
     alert("You won");
+  } else {
+    alert("You tied");
   }
 }
 
@@ -97,6 +109,7 @@ $(document).ready(function(){
     var playerOne = $("#player1name").val();
     var newPlayer = new Player(playerOne, 0, 500);
     var dealer = new Player(dealer, 0, 5000);
+    var ace = aceGrab();
     $("#playerNameSpan").text(newPlayer.name);
     $("#remainingChipsSpan").text(newPlayer.chips);
     $("#dealerHand").text(dealerTotal + suitGenerator());
@@ -118,9 +131,6 @@ $(document).ready(function(){
         totalHand = totalHand + cardHit;
         cardHit = randomCard();
       }
-      // totalHand = totalHand + cardHit;
-      // $("#curHand").append(" " + cardHit + suitGenerator());
-      // cardHit = randomCard();
     } else if (totalHand < 21 && cardHit !== 1){
       totalHand = totalHand + cardHit;
       $("#curHand").append(" " + cardHit + suitGenerator());
@@ -128,7 +138,17 @@ $(document).ready(function(){
     }
 
     $("#totalHand").text(totalHand);
-        var final = winLose();
+
+    if (totalHand > 21){
+      alert("You lose");
+      $('#randomCardBtn, #holdBtn').hide();
+      $('#startOver').show();
+    } else if (totalHand == 21){
+      alert("You win");
+      $('#randomCardBtn, #holdBtn').hide();
+      $('#startOver').show();
+    }
+
   });
 
   $("#holdBtn").click(function(){
@@ -144,8 +164,17 @@ $(document).ready(function(){
     }
 
     $("#dealerFinal").text(dealerTotal);
-    var winlose = dealerWinLose();
 
+    if(dealerTotal > totalHand && dealerTotal <= 21)  {
+      alert("You lost");
+
+    } else if (dealerTotal === 21){
+      alert("You lost");
+    } else if (dealerTotal > 21) {
+      alert("You won");
+    } else {
+      alert("You tied");
+    }
   });
   $("#startOver").click(function(){
     var reset = resetVars();

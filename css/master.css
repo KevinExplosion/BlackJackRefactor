@@ -1,5 +1,7 @@
 html {
   overflow-x: hidden;
+  background-color: #000;
+  background-image: url("../img/introductionBackground.jpg");
 }
 
 body {
@@ -31,10 +33,10 @@ body {
 }
 
 .playerInfoBody {
-  background-image: url("../img/chips.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  height: 585px;
+  /*background-image: url("../img/chips.png");*/
+  /*background-repeat: no-repeat;*/
+  /*background-position: center top;*/
+  /*height: 585px;*/
 }
 
 #start {
@@ -51,8 +53,15 @@ body {
 }
 
 .introduction {
+  background-image: url(../img/gamebackground.jpg);
+  background-size: 100%;
   font-weight: bolder;
   color: #fff;
+  margin-top: -10px;
+}
+
+.introduction, .container {
+  height: 700px;
 }
 
 .gameTitle {
@@ -91,24 +100,25 @@ h4{
   opacity: .99;
 }
 
-/*.introduction {*/
-/*  background-image: url("../img/introductionBackground.jpg");*/
-/*  background-size: 100%;*/
-/*  background-position: center;*/
-/*  background-repeat: no-repeat;*/
-/*}*/
+.introduction {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .game{
-  background: url("../img/gameBackground.jpg");
+  background-image: url(../img/gamebackground.jpg);
   background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: right center;
   display: none;
   text-align: center;
   margin-top: -30px;
   padding-top: 20px;
   padding-bottom: 30px;
   color: #ECECEC;
+}
+
+.main {
+    margin-bottom: -300px;
 }
 
 #startOver {
