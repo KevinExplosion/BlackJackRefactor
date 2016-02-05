@@ -13,7 +13,7 @@
     <script charset="utf-8" src="js/master.js">
     </script>
   </head>
-  <body>
+  <body class="container">
     <div class="jumbotron">
       <div class="jumbotronH1">
         <h1><span class="firstLetter">B</span>LACK<span class=
@@ -22,7 +22,7 @@
     </div>
 
         <!-- Modal -->
-
+<!-- <div class="container"> -->
         <div aria-labelledby="myModalLabel" class="modal fade" id=
         "blackJackRules" role="dialog" tabindex="-1">
           <div class="modal-dialog" role="document">
@@ -52,10 +52,10 @@
           </div>
         </div>
 
-        
+<!-- end of modal -->
+
     <div class="introduction">
-      <div class="container main">
-        <div class="gameTitle navbar">
+        <div class="gameTitle">
           <h3>Welcome to Black Jack Casino: The only game in our Casino</h3>
         </div>
         <button class="btn btn-sm" data-target="#blackJackRules" data-toggle=
@@ -67,10 +67,10 @@
           <div class="player1">
 
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-md-4">
           </div>
 
-           <div class="col-sm-4">
+           <div class="col-md-4">
             <div class="form-group">
               <label for="player1name">First &amp; Last Name</label>
               <input class="form-control" id="player1name" placeholder="Enter Name" type="text">
@@ -79,16 +79,15 @@
               <label for="player1age">Age <span class="doNotLie">(Please don't lie)</span></label>
               <input class="form-control" id="player1age" placeholder="Enter Age" type="text">
             </div>
-            <button class="btn btn-danger btn-lg" id="start" type="button">Start
-            Game</button>
+            <button id="start" type="button"><span class="start">Start<br>
+            Game</span></button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
             </div>
             </div>
           </div><!--player1 body-->
         </div>
-      </div>
-      </div>
+    </div>
 
 
 

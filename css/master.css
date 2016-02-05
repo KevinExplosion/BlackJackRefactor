@@ -1,13 +1,16 @@
 html {
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #000;
+  background-size: 100%;
   background-image: url("../img/introductionBackground.jpg");
+  background-repeat: no-repeat;
+  font-family: monospace, Helvetica, sans-serif;
 }
 
 body {
-  font-family: Helvetica;
-  background-color: #075220;
-  margin-bottom: 40%;
+  background-color: black;
+  margin-left: -100px;
+  margin-right: -100px;
 }
 
 .jumbotron {
@@ -32,36 +35,49 @@ body {
   text-shadow: 2px 2px 5px black;
 }
 
-.playerInfoBody {
-  /*background-image: url("../img/chips.png");*/
-  /*background-repeat: no-repeat;*/
-  /*background-position: center top;*/
-  /*height: 585px;*/
+.container {
+  text-align: center;
+  margin-bottom: -200px
 }
 
+/* ---- The START GAME button ---- */
 #start {
   margin-bottom: 100px;
+  height: 110px;
+  width: 110px;
+  border: 9px dashed #fff;
+  border-radius: 100px;
+  background-color: #F22613;
+  box-shadow: 0 0 5px #fff;
 }
 
-.player1{
-  text-align: center;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  /*margin-left: 400px;*/
-  /*width:30%;*/
+#start:hover {
+  opacity: 0.8;
 }
+
+/* ---- End start button ---- */
 
 .introduction {
   background-image: url(../img/gamebackground.jpg);
-  background-size: 100%;
+  background-position: top;
+  background-size: cover;
+  background-position: center;
   font-weight: bolder;
   color: #fff;
   margin-top: -10px;
 }
 
-.introduction, .container {
-  height: 700px;
+.game{
+  background-image: url(../img/gamebackground.jpg);
+  background-position: bottom;
+  background-size: cover;
+  display: none;
+  text-align: center;
+  margin-top: -30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: #ECECEC;
 }
 
 .gameTitle {
@@ -70,10 +86,6 @@ body {
   height: 80px;
   margin-top: -30px;
   padding-bottom: 20px;
-}
-
-.container {
-  text-align: center;
 }
 
 .doNotLie {
@@ -96,29 +108,8 @@ h4{
   background-color: #FB3D37;
 }
 
-.btn:hover{
+.btn:hover {
   opacity: .99;
-}
-
-.introduction {
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.game{
-  background-image: url(../img/gamebackground.jpg);
-  background-size: 100%;
-  display: none;
-  text-align: center;
-  margin-top: -30px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  color: #ECECEC;
-}
-
-.main {
-    margin-bottom: -300px;
 }
 
 #startOver {
