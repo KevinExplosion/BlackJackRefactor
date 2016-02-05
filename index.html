@@ -57,9 +57,9 @@
 <!-- end of modal -->
 
     <div class="introduction">
-        <div class="gameTitle">
+        <!-- <div class="gameTitle"> -->
           <h3>Welcome to Black Jack Casino: The only game in our Casino</h3>
-        </div>
+        <!-- </div> -->
         <button class="btn btn-sm" data-target="#blackJackRules" data-toggle=
         "modal" type="button">Rules</button>
         <div class="playerInfoBody">
@@ -79,7 +79,7 @@
             </div>
             <div class="form-group">
               <label for="player1age">Age <span class="doNotLie">(Please don't lie)</span></label>
-              <input class="form-control" id="player1age" placeholder="Enter Age" type="text">
+              <input class="form-control" id="player1age" placeholder="Enter Age" type="number">
             </div>
             <button id="start" type="button"><span class="start">Start<br>
             Game</span></button>
@@ -103,8 +103,8 @@
       <p id="showDealer">Dealer score: <span id="dealerFinal"></span></p>
       <p>Current Hand: <span id="curHand"></span></p>
       <p>Your score: <span id="totalHand"></span></p><br>
-      <button class="btn btn-danger btn-lg" id="randomCardBtn" type="button">Hit</button>
-      <button class="btn btn-primary btn-lg" id="holdBtn" type="button">Hold</button>
+      <button id="randomCardBtn" type="button">Hit</button>
+      <button id="holdBtn" type="button">Hold</button>
       <button id="startOver" type="button">Deal Again</button>
     </div>
   </body>

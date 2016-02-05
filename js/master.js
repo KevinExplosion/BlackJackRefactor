@@ -104,17 +104,29 @@ function resetVars(){
 
 $(document).ready(function(){
   $("#start").click(function(){
-    $(".introduction").hide();
-    $(".game").show();
+    var playerAge = $("#player1age").val();
     var playerOne = $("#player1name").val();
-    var newPlayer = new Player(playerOne, 0, 500);
-    var dealer = new Player(dealer, 0, 5000);
-    var ace = aceGrab();
-    $("#playerNameSpan").text(newPlayer.name);
-    $("#remainingChipsSpan").text(newPlayer.chips);
-    $("#dealerHand").text(dealerTotal + suitGenerator());
-    $("#curHand").text(handOne + suitGenerator() + " " + handTwo + suitGenerator());
-    $("#totalHand").text(totalHand);
+    if (playerAge.length === 0 || playerOne.length === 0){
+      alert("Please enter all of your player information");
+    }
+    else if (playerAge < 21){
+      alert("Sorry, you can't play");
+      $("#start").attr("disabled", true);
+    } else {
+      $(".introduction").hide();
+      $(".game").show();
+      var newPlayer = new Player(playerOne, 0, 500);
+      var dealer = new Player(dealer, 0, 5000);
+      var ace = aceGrab();
+      $("#playerNameSpan").text(newPlayer.name);
+      $("#remainingChipsSpan").text(newPlayer.chips);
+      $("#dealerHand").text(dealerTotal + suitGenerator());
+      $("#curHand").text(handOne + suitGenerator() + " " + handTwo + suitGenerator());
+      $("#totalHand").text(totalHand);
+      if (totalHand === 21){
+        alert("You win!");
+      }
+    }
   });
 
   $("#randomCardBtn").click(function(){
